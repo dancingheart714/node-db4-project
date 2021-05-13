@@ -10,7 +10,11 @@ exports.seed = async function (knex) {
       instruction: 'place on grill and cook until no longer pink in center',
       recipe_id: '1',
     },
-    { instruction_id: '3', instruction: 'place on bun', recipe_id: '1' },
+    {
+      instruction_id: '3',
+      instruction: 'place cheese and burger on bun',
+      recipe_id: '1',
+    },
     {
       instruction_id: '4',
       instruction: 'add mayonnaise, ketchup, mustard and pickles',
@@ -20,7 +24,7 @@ exports.seed = async function (knex) {
     {
       instruction_id: '5',
       instruction:
-        'place milk and ice cream in a blender; blend till mixed and enjoy',
+        'place milk,ice cream and syrup in a blender; blend till mixed and enjoy',
       recipe_id: '2',
     },
 
