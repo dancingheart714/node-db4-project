@@ -1,22 +1,15 @@
 const express = require('express');
 
-const dataRouter = require('./router');
+const recipesRouter = require('./recipes/recipes-router');
 
 const server = express();
 
 server.use(express.json());
-// server.use('/api/recipes', dataRouter);
 
-server.get('/', (req, res, next) => {
-  res.status(200).json({ api: 'Get Ready For Yummy Recipes' });
-});
+server.use('/api/recipes', recipesRouter);
 
-server.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).json({
-    message: 'Uh oh! Something went wrong!',
-    err,
-  });
+server.use('*', (req, res) => {
+  res.json({ api: 'up' });
 });
 
 module.exports = server;
